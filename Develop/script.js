@@ -8,20 +8,27 @@ var generatePassword = function () {
     return;
   }
 
-  var passwordLower = window.confirm("Confirm whether or not to include lowercase characters.");
-  var passwordUpper = window.confirm("Confirm whether or not to include uppercase characters.");
-  var passwordNumber = window.confirm("Confirm whether or not to include number characters.");
-  var passwordSpecial = window.confirm("Confirm whether or not to include special characters.");
+  // var passwordLower = window.confirm("Confirm whether or not to include lowercase characters.");
+  // var passwordUpper = window.confirm("Confirm whether or not to include uppercase characters.");
+  // var passwordNumber = window.confirm("Confirm whether or not to include number characters.");
+  // var passwordSpecial = window.confirm("Confirm whether or not to include special characters.");
 
-  if (passwordUpper + passwordLower + passwordNumber + passwordSpecial === 0) {
-    alert("Pleas select atleast one!")
-    return;
-  }
+  // if (passwordUpper + passwordLower + passwordNumber + passwordSpecial === 0) {
+  //   alert("Pleas select atleast one!")
+  //   return;
+  // }
 
+  // prompt ask the character type to use
+  var passwordPrompt = window.prompt(
+    "What character types would you like to use? Enter as many as you want LOWERCASE, UPPERCASE, NUMBER, OR SPECIAL. HINT TYPE IN ORDER FROM LOWERCASE TO SPECIAL WITH SPACE IN BETWEEN AND NO COMMAS. FOR EXAMPLE: LOWERCASE UPPERCASE NUMBER"
+  );
+
+
+  passwordPrompt = passwordPrompt.toLowerCase();
 
   //uses switch case to choose what character types to use
-  switch (passwordLower, passwordUpper, passwordNumber, passwordSpecial) {
-    case true, false, false, false:
+  switch (passwordPrompt) {
+    case 'lowercase':
       // parseFloat turns the numbers from a string to a a integer
       var length = parseFloat(number);
       charset = "abcdefghijklmnopqrstuvwxyz",
@@ -32,7 +39,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case false, true, false, false:
+    case 'uppercase':
       var length = parseFloat(number);
       charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
         retVal = "";
@@ -41,7 +48,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case false, false, true, false:
+    case 'number':
       var length = parseFloat(number);
       charset = "0123456789",
         retVal = "";
@@ -50,7 +57,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case false, false, false, true:
+    case 'special':
       var length = parseFloat(number);
       charset = "!@#$%^&*(){}|;':<>?,./",
         retVal = "";
@@ -59,7 +66,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case true, true, true, true:
+    case 'lowercase uppercase number special':
       var length = parseFloat(number);
       charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ01234567891234567890!@#$%^&*(){}|;':<>?,./",
         retVal = "";
@@ -68,7 +75,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case true, true, false, false:
+    case 'lowercase uppercase':
       var length = parseFloat(number);
       charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
         retVal = "";
@@ -77,7 +84,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case true, false, true, false:
+    case 'lowercase number':
       var length = parseFloat(number);
       charset = "abcdefghijklmnopqrstuvwxyz01234567891234567890",
         retVal = "";
@@ -86,7 +93,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case true, false, false, true:
+    case 'lowercase special':
       var length = parseFloat(number);
       charset = "abcdefghijklmnopqrstuvwxyz!@#$%^&*(){}|;':<>?,./",
         retVal = "";
@@ -95,7 +102,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case false, true, true, false:
+    case 'uppercase number':
       var length = parseFloat(number);
       charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890",
         retVal = "";
@@ -104,7 +111,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case false, true, false, true:
+    case 'uppercase special':
       var length = parseFloat(number);
       charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*(){}|;':<>?,./",
         retVal = "";
@@ -113,7 +120,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case false, false, true, true:
+    case 'number special':
       var length = parseFloat(number);
       charset = "12345678901234567890!@#$%^&*(){}|;':<>?,./",
         retVal = "";
@@ -122,7 +129,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case true, true, true, false:
+    case 'lowercase uppercase number':
       var length = parseFloat(number);
       charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890",
         retVal = "";
@@ -131,7 +138,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case true, true, false, true:
+    case 'lowercase uppercase special':
       var length = parseFloat(number);
       charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*(){}|;':<>?,./",
         retVal = "";
@@ -140,7 +147,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case true, false, true, true:
+    case 'lowercase number special':
       var length = parseFloat(number);
       charset = "abcdefghijklmnopqrstuvwxyz12345678901234567890!@#$%^&*(){}|;':<>?,./!@#$%^&",
         retVal = "";
@@ -149,7 +156,7 @@ var generatePassword = function () {
       }
       return retVal;
       break;
-    case false, true, true, true:
+    case 'uppercase number special':
       var length = parseFloat(number);
       charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890!@#$%^&*(){}|;':<>?,./",
         retVal = "";
@@ -158,10 +165,14 @@ var generatePassword = function () {
       }
       return retVal;
       break;
+    default:
+      window.alert('You did not pick a valid option. Try again.');
+
       passwordPrompt();
       break;
   }// end of switch statement
 }// end of generatePassword function
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
