@@ -23,7 +23,7 @@ SO THAT I can create a strong password that provides greater security
     THEN the password is either displayed in an alert or written to the page
 # Live URL
 
-(https://israel386.github.io/professional-portfolio/)
+(https://israel386.github.io/friendly-parakeet/)
 
 # ScreenShots
 
