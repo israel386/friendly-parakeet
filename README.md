@@ -27,10 +27,10 @@ SO THAT I can create a strong password that provides greater security
 
 # ScreenShots
 
-![screenshots](develop/assets/Screenshot%202022-05-08%20223347.png)
-![screenshots](develop/assets/Screenshot%202022-05-08%20223429.png)
-![screenshots](develop/assets/Screenshot%202022-05-08%20223532.png)
-![screenshots](develop/assets/Screenshot%202022-05-08%20223735.png)
+![screenshots](assets/Screenshot%202022-05-08%20223347.png)
+![screenshots](assets/Screenshot%202022-05-08%20223429.png)
+![screenshots](assets/Screenshot%202022-05-08%20223532.png)
+![screenshots](assets/Screenshot%202022-05-08%20223735.png)
 
 ## Note
 All acceptance criteria have been met, code follows a logical structure and has been updated to generate password. 
